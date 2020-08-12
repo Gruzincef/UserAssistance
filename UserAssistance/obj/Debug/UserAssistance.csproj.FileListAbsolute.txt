@@ -1,0 +1,27 @@
+C:\Users\Белый Господин\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.csprojResolveAssemblyReference.cache
+C:\Users\Белый Господин\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.MainForm.resources
+C:\Users\Белый Господин\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.csproj.GenerateResource.Cache
+C:\Users\Белый Господин\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\bin\Debug\UserAssistance.exe.config
+C:\Users\Белый Господин\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\bin\Debug\UserAssistance.exe
+C:\Users\Белый Господин\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\bin\Debug\UserAssistance.pdb
+C:\Users\Белый Господин\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.exe
+C:\Users\Белый Господин\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.pdb
+C:\Users\Белый Господин\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.LoadAdmin.resources
+C:\Users\АРМ162\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\bin\Debug\UserAssistance.exe.config
+C:\Users\АРМ162\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\bin\Debug\UserAssistance.exe
+C:\Users\АРМ162\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\bin\Debug\UserAssistance.pdb
+C:\Users\АРМ162\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.csprojResolveAssemblyReference.cache
+C:\Users\АРМ162\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.LoadAdmin.resources
+C:\Users\АРМ162\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.MainForm.resources
+C:\Users\АРМ162\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.csproj.GenerateResource.Cache
+C:\Users\АРМ162\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.exe
+C:\Users\АРМ162\Documents\SharpDevelop Projects\UserAssistance\UserAssistance\obj\Debug\UserAssistance.pdb
+G:\UserAssistance\UserAssistance\bin\Debug\UserAssistance.exe.config
+G:\UserAssistance\UserAssistance\bin\Debug\UserAssistance.exe
+G:\UserAssistance\UserAssistance\bin\Debug\UserAssistance.pdb
+G:\UserAssistance\UserAssistance\obj\Debug\UserAssistance.csprojResolveAssemblyReference.cache
+G:\UserAssistance\UserAssistance\obj\Debug\UserAssistance.LoadAdmin.resources
+G:\UserAssistance\UserAssistance\obj\Debug\UserAssistance.MainForm.resources
+G:\UserAssistance\UserAssistance\obj\Debug\UserAssistance.csproj.GenerateResource.Cache
+G:\UserAssistance\UserAssistance\obj\Debug\UserAssistance.exe
+G:\UserAssistance\UserAssistance\obj\Debug\UserAssistance.pdb
