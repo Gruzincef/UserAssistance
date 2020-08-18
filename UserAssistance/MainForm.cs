@@ -40,8 +40,8 @@ void Button5Click(object sender, EventArgs e){
 	string command;
 	DialogResult dialogresult=MessageBox.Show("Подтверждаете перезагрузку сетевых адаптеров?", "Подтверждаете?", MessageBoxButtons.YesNo);
 	if(dialogresult==DialogResult.Yes){
-		command="/C netsh int reset all &";
-		command+=" netsh winsock reset & ";
+		//command=" netsh int reset all &";
+		command="/C netsh winsock reset & ";
 		//Список сетевых адаптеров
 		NtwrkIntrfc[] adapter=include.ListNetworkInterface();
 	

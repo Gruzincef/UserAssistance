@@ -121,7 +121,7 @@ namespace UserAssistance
 			this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-			this.tabPage1.Size = new System.Drawing.Size(695, 543);
+			this.tabPage1.Size = new System.Drawing.Size(352, 382);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Сеть";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -191,7 +191,7 @@ namespace UserAssistance
 			this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(703, 572);
+			this.tabControl1.Size = new System.Drawing.Size(360, 411);
 			this.tabControl1.TabIndex = 0;
 			// 
 			// tabPage3
@@ -256,7 +256,7 @@ namespace UserAssistance
 			// 
 			// button11
 			// 
-			this.button11.Location = new System.Drawing.Point(21, 594);
+			this.button11.Location = new System.Drawing.Point(20, 434);
 			this.button11.Margin = new System.Windows.Forms.Padding(4);
 			this.button11.Name = "button11";
 			this.button11.Size = new System.Drawing.Size(315, 36);
@@ -270,12 +270,13 @@ namespace UserAssistance
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(735, 640);
+			this.ClientSize = new System.Drawing.Size(382, 433);
 			this.Controls.Add(this.button11);
 			this.Controls.Add(this.tabControl1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(4);
-			this.MinimumSize = new System.Drawing.Size(700, 500);
+			this.MaximizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(400, 480);
 			this.Name = "MainForm";
 			this.Text = "Помошник пользователю";
 			this.tabPage2.ResumeLayout(false);
