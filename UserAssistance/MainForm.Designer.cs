@@ -28,7 +28,6 @@ namespace UserAssistance
 		private System.Windows.Forms.Button button7;
 		private System.Windows.Forms.Button button10;
 		private System.Windows.Forms.Button button9;
-		private System.Windows.Forms.Button button11;
 		private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
 		
 		/// <summary>
@@ -68,12 +67,14 @@ namespace UserAssistance
 			this.button9 = new System.Windows.Forms.Button();
 			this.button8 = new System.Windows.Forms.Button();
 			this.button7 = new System.Windows.Forms.Button();
-			this.button11 = new System.Windows.Forms.Button();
 			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.OpisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabPage2.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage3.SuspendLayout();
+			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabPage2
@@ -84,7 +85,7 @@ namespace UserAssistance
 			this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-			this.tabPage2.Size = new System.Drawing.Size(695, 543);
+			this.tabPage2.Size = new System.Drawing.Size(352, 375);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Принтеры";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -121,7 +122,7 @@ namespace UserAssistance
 			this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-			this.tabPage1.Size = new System.Drawing.Size(352, 382);
+			this.tabPage1.Size = new System.Drawing.Size(352, 375);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Сеть";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -187,11 +188,12 @@ namespace UserAssistance
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
 			this.tabControl1.Controls.Add(this.tabPage3);
-			this.tabControl1.Location = new System.Drawing.Point(16, 15);
+			this.tabControl1.Location = new System.Drawing.Point(13, 45);
 			this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
 			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(360, 411);
+			this.tabControl1.Size = new System.Drawing.Size(360, 404);
 			this.tabControl1.TabIndex = 0;
 			// 
 			// tabPage3
@@ -204,7 +206,7 @@ namespace UserAssistance
 			this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-			this.tabPage3.Size = new System.Drawing.Size(695, 543);
+			this.tabPage3.Size = new System.Drawing.Size(352, 375);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Кэш";
 			this.tabPage3.UseVisualStyleBackColor = true;
@@ -254,37 +256,48 @@ namespace UserAssistance
 			this.button7.Visible = false;
 			this.button7.Click += new System.EventHandler(this.Button7Click);
 			// 
-			// button11
+			// menuStrip1
 			// 
-			this.button11.Location = new System.Drawing.Point(20, 434);
-			this.button11.Margin = new System.Windows.Forms.Padding(4);
-			this.button11.Name = "button11";
-			this.button11.Size = new System.Drawing.Size(315, 36);
-			this.button11.TabIndex = 1;
-			this.button11.Text = "Запуск от имени администратора";
-			this.button11.UseVisualStyleBackColor = true;
-			this.button11.Visible = false;
-			this.button11.Click += new System.EventHandler(this.Button11Click);
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.OpisToolStripMenuItem});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(392, 28);
+			this.menuStrip1.TabIndex = 2;
+			this.menuStrip1.Text = "menuStrip1";
+			// 
+			// OpisToolStripMenuItem
+			// 
+			this.OpisToolStripMenuItem.Name = "OpisToolStripMenuItem";
+			this.OpisToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+			this.OpisToolStripMenuItem.Text = "О программе";
+			this.OpisToolStripMenuItem.Click += new System.EventHandler(this.OpisToolStripMenuItemClick);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(382, 433);
-			this.Controls.Add(this.button11);
+			this.ClientSize = new System.Drawing.Size(392, 458);
 			this.Controls.Add(this.tabControl1);
+			this.Controls.Add(this.menuStrip1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MainMenuStrip = this.menuStrip1;
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.MaximizeBox = false;
-			this.MinimumSize = new System.Drawing.Size(400, 480);
+			this.MinimumSize = new System.Drawing.Size(410, 500);
 			this.Name = "MainForm";
 			this.Text = "Помошник пользователю";
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage3.ResumeLayout(false);
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem OpisToolStripMenuItem;
+		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.Button button12;
 	}
 }

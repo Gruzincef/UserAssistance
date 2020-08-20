@@ -1,12 +1,4 @@
-﻿/*
- * Создано в SharpDevelop.
- * Пользователь: Белый Господин
- * Дата: 10.05.2020
- * Время: 13:52
- * 
- * Для изменения этого шаблона используйте меню "Инструменты | Параметры | Кодирование | Стандартные заголовки".
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -40,8 +32,9 @@ void Button5Click(object sender, EventArgs e){
 	string command;
 	DialogResult dialogresult=MessageBox.Show("Подтверждаете перезагрузку сетевых адаптеров?", "Подтверждаете?", MessageBoxButtons.YesNo);
 	if(dialogresult==DialogResult.Yes){
-		//command=" netsh int reset all &";
+		//command="/C netsh int ip reset all &";
 		command="/C netsh winsock reset & ";
+		command+=" ipconfig /flushdns  & ";
 		//Список сетевых адаптеров
 		NtwrkIntrfc[] adapter=include.ListNetworkInterface();
 	
@@ -81,10 +74,7 @@ void Button1Click(object sender, EventArgs e){
 	if(dialogresult==DialogResult.Yes)
 	include.vklsetevoeobn();
 }
-void Button11Click(object sender, EventArgs e){
-LoadAdmin frm=new LoadAdmin();
-	frm.Show(this);
-}
+
 
 void Button3Click(object sender, EventArgs e){
 	string command;
@@ -290,4 +280,11 @@ string command;
 }
  }
 	
-	}}
+		
+
+	
+		
+void OpisToolStripMenuItemClick(object sender, EventArgs e)	{
+		System.Diagnostics.Process.Start(@"https://github.com/Gruzincef/UserAssistance");
+}
+}}

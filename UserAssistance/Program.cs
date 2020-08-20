@@ -1,11 +1,4 @@
-﻿/*
- * Создано в SharpDevelop.
- * Пользователь: Белый Господин
- * Дата: 10.05.2020
- * Время: 13:52
- * 
- * Для изменения этого шаблона используйте меню "Инструменты | Параметры | Кодирование | Стандартные заголовки".
- */
+﻿
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
@@ -32,12 +25,6 @@ namespace UserAssistance
 				ProcessStartInfo processinfo=new ProcessStartInfo();
 				processinfo.Verb="runas";
 				processinfo.FileName=Application.ExecutablePath;
-			/*	string [] s=include.LoadLoginPassword();
-				if(s!=null){
-					processinfo.UseShellExecute=false;
-					processinfo.UserName=s[0];
-					processinfo.Password=include.ConvertPasStrSec(s[1]);
-				}*/
 				try{
 					Process.Start(processinfo);
 				}catch(Win32Exception)  {

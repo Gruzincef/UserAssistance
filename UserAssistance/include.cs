@@ -1,12 +1,4 @@
-﻿/*
- * Создано в SharpDevelop.
- * Пользователь: Белый Господин
- * Дата: 10.05.2020
- * Время: 14:48
- * 
- * Для изменения этого шаблона используйте меню "Инструменты | Параметры | Кодирование | Стандартные заголовки".
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -36,7 +28,6 @@ public static void SetIP(string ipAddress, string subnetMask, string gateway, st
 		using (var networkConfigs = networkConfigMng.GetInstances()){
 			foreach (var managementObject in networkConfigs.Cast<ManagementObject>().Where(managementObject => (bool)managementObject["IPEnabled"])){
 			using (var newIP = managementObject.GetMethodParameters("EnableStatic")) {
-				// Set new IP address and subnet if needed
 				if ((!String.IsNullOrEmpty(ipAddress)) || (!String.IsNullOrEmpty(subnetMask))) {
 					if (!String.IsNullOrEmpty(ipAddress)) {
 						newIP["IPAddress"] = new[] { ipAddress };
@@ -46,7 +37,6 @@ public static void SetIP(string ipAddress, string subnetMask, string gateway, st
 					}
 					managementObject.InvokeMethod("EnableStatic", newIP, null);
 				}
-				// Set mew gateway if needed
 				if (!String.IsNullOrEmpty(gateway)) {
 					using (var newGateway = managementObject.GetMethodParameters("SetGateways")){
 						newGateway["DefaultIPGateway"] = new[] { gateway };
@@ -54,8 +44,6 @@ public static void SetIP(string ipAddress, string subnetMask, string gateway, st
 						managementObject.InvokeMethod("SetGateways", newGateway, null);
 					}
 				}
- //newIP["DNSServerSearchOrder"] = DNS.Split(',');
-//ManagementBaseObject setDNS = newIP.iInvokeMethod("SetDNSServerSearchOrder", newIP, null);
 			}
 			ManagementBaseObject newDNS =managementObject.GetMethodParameters("SetDNSServerSearchOrder");
 			newDNS["DNSServerSearchOrder"] = DNS.Split(',');
@@ -113,8 +101,6 @@ public static void viklsetevoeobn(){
 	command+=" net stop MpsSvc /y & ";
 	command+=" netsh advfirewall firewall set rule group=\"обнаружение сети\" new enable=no & ";
 	command+=" netsh advfirewall firewall set rule group=\"общий доступ к файлам и принтерам\" new enable=no &";
-//	command+=" REG ADD HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v forceguest /t REG_DWORD /d 1 /f & ";
-//	command+=" REG ADD HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v LmCompatibilityLevel /t REG_DWORD /d 0 /f  ";
 	command+=" pause";
 	System.Diagnostics.Process.Start("cmd.exe", command);
 	}
@@ -139,7 +125,6 @@ public static void vklsetevoeobn(){
 	command+=" REG ADD HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v LmCompatibilityLevel /t REG_DWORD /d 0 /f  & ";
 	command+=" pause";
 	System.Diagnostics.Process.Start("cmd.exe", command);
-
 }
 
 
@@ -173,7 +158,6 @@ public static SecureString ConvertPasStrSec(string pass){
 	}
 	secpas.MakeReadOnly();
 	return secpas;
-	
 }
 //удаляем ключи
 public static void DelKey(){
@@ -187,16 +171,13 @@ public static void DelKey(){
 }
 //генерируем ключ
 public static void AssignNewKey(){
-	rsa=new  RSACryptoServiceProvider(2048);
-	//rsa = new RSACryptoServiceProvider(2048);
-	//using (var rsa = new RSACryptoServiceProvider(2048)){                
-		rsa.PersistKeyInCsp = false;               
-		_privateKeyString=rsa.ToXmlString(true);
-		_publicKey = rsa.ExportParameters(false);
-		_privateKey = rsa.ExportParameters(true); 
-		if(File.Exists("key")) File.Delete("key");
-		File.AppendAllText("key",_privateKeyString);		
-    // }
+	rsa=new  RSACryptoServiceProvider(2048);        
+	rsa.PersistKeyInCsp = false;               
+	_privateKeyString=rsa.ToXmlString(true);
+	_publicKey = rsa.ExportParameters(false);
+	_privateKey = rsa.ExportParameters(true); 
+	if(File.Exists("key")) File.Delete("key");
+	File.AppendAllText("key",_privateKeyString);		
 }
 
 //Загружаем приватный ключ
@@ -217,8 +198,6 @@ public static bool LoadPrivateKey(){
 //шифруем текст
 public static byte[] CryptoKey(string txt){
 	return rsa.Encrypt(Encoding.Default.GetBytes(txt),true);
-
-	//}
 }
 private static byte[] DeBitconvert(string s){
 	string[] ss=s.Split('-');
@@ -230,17 +209,10 @@ private static byte[] DeBitconvert(string s){
 public static string DecryptoKey(byte[] bt){
 	RSACryptoServiceProvider rsa=new RSACryptoServiceProvider(2048);
 	rsa.FromXmlString(File.ReadAllText("key"));
-	//_privateKey=rsa.ExportParameters(true);
-	//byte[] s=Encoding.Default.GetBytes(key);
 	Encoding encoding=Encoding.Default;
 	return encoding.GetString(rsa.Decrypt(bt,true));
 }
-/*
-public static bool TestUser(string user,string pass){
-	if(Members
 	
-}
-*/	
 }
 }
 
