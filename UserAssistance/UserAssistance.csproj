@@ -54,10 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="include.cs" />
-    <Compile Include="LoadAdmin.cs" />
-    <Compile Include="LoadAdmin.Designer.cs">
-      <DependentUpon>LoadAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="NtwrkIntrfc.cs" />
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
@@ -70,9 +66,6 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoadAdmin.resx">
-      <DependentUpon>LoadAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
