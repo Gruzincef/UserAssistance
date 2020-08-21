@@ -1,5 +1,16 @@
-*.exe
-UserAssistance.pdb
-UserAssistance.csproj.FileListAbsolute.txt
-UserAssistance.csproj.GenerateResource.Cache
+UserAssistance\bin\Debug\UserAssistance.exe
+UserAssistance\bin\Debug\UserAssistance.pdb
+UserAssistance\bin\Debug\UserAssistance.csproj.FileListAbsolute.txt
+UserAssistance\bin\Debug\UserAssistance.csproj.GenerateResource.Cache
 
+UserAssistance/bin/Debug/UserAssistance.exe.config
+
+UserAssistance/obj/Debug/UserAssistance.csprojResolveAssemblyReference.cache
+UserAssistance/Properties/AssemblyInfo.cs
+UserAssistance/bin/Debug/UserAssistance.pdb
+UserAssistance/bin/Debug/UserAssistance.exe
+UserAssistance/obj/Debug/UserAssistance.csproj.FileListAbsolute.txt
+UserAssistance/obj/Debug/UserAssistance.csproj.GenerateResource.Cache
+UserAssistance/obj/Debug/UserAssistance.exe
+UserAssistance/obj/Debug/UserAssistance.MainForm.resources
+UserAssistance/obj/Debug/UserAssistance.pdb
