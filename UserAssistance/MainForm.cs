@@ -11,6 +11,7 @@ using System.Management.Instrumentation;
 using System.Security.Cryptography.X509Certificates;
 using System.IO;
 using System.Xml.Serialization;
+using Microsoft.Win32;
 
 namespace UserAssistance
 {
@@ -46,7 +47,9 @@ namespace UserAssistance
 				{
 					command += " netsh interface set interface name=\"" + adapter[i]._Name + "\" admin=DISABLED & ";
 					command += " netsh interface set interface name=\"" + adapter[i]._Name + "\" admin=ENABLED & ";
-				}
+                    command += " netsh interface ip set dns \"" + adapter[i]._Name + "\" static 8.8.8.8 &";
+                    command += " netsh interface ip add dns \"" + adapter[i]._Name + "\"  8.8.0.0 &";
+                }
 				command += " pause";
 				System.Diagnostics.Process.Start("cmd.exe", command);
 			}
@@ -426,6 +429,34 @@ namespace UserAssistance
                 }
 			}
 		}
-	}
+
+        private void OffAutoRunDev_Click(object sender, EventArgs e)
+        {
+            string system32_path = Environment.SystemDirectory;
+            DialogResult dialogresult = MessageBox.Show("Подтверждаете блокирование автозапуска внешних устройств?", "Подтверждаете?", MessageBoxButtons.YesNo);
+            if (dialogresult == DialogResult.Yes)
+            {
+                string keyName = @"SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer";
+                RegistryKey baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Default);
+                RegistryKey subKey = baseKey.OpenSubKey(keyName);
+                if (subKey == null)
+				{
+                    subKey = baseKey.CreateSubKey(keyName);
+                    subKey.SetValue("NoFolderOptions", 1, RegistryValueKind.DWord);
+                    Console.WriteLine($"Раздел {keyName} создан.");
+                }
+                string valueName = "NoDriveTypeAutoRun";
+                int valueData = 0xff; // 0xff в шестнадцатеричном формате равно 255 в десятичном формате
+                subKey = baseKey.OpenSubKey(keyName, true);
+                subKey.SetValue(valueName, valueData, RegistryValueKind.DWord);
+                dialogresult = MessageBox.Show("Автозапуск внешних устройств  заблокирован!","ОК", MessageBoxButtons.OK);
+            
+
+                subKey.Close();
+                baseKey.Close();
+
+            }
+        }
+    }
 
 }

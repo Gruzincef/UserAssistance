@@ -68,28 +68,31 @@ namespace UserAssistance
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.OpisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.отображениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.действиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.действиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteOldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.OpisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.OffAutoRunDev = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -142,7 +145,7 @@ namespace UserAssistance
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(6, 175);
+            this.button5.Location = new System.Drawing.Point(6, 153);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(185, 23);
             this.button5.TabIndex = 4;
@@ -152,7 +155,7 @@ namespace UserAssistance
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(6, 240);
+            this.button4.Location = new System.Drawing.Point(6, 204);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(185, 23);
             this.button4.TabIndex = 3;
@@ -163,7 +166,7 @@ namespace UserAssistance
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(6, 125);
+            this.button3.Location = new System.Drawing.Point(6, 103);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(185, 23);
             this.button3.TabIndex = 2;
@@ -173,7 +176,7 @@ namespace UserAssistance
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 71);
+            this.button2.Location = new System.Drawing.Point(6, 62);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(185, 23);
             this.button2.TabIndex = 1;
@@ -197,6 +200,7 @@ namespace UserAssistance
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(10, 37);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -271,24 +275,6 @@ namespace UserAssistance
             this.tabPage4.Text = "ЭЦП";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OpisToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(315, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // OpisToolStripMenuItem
-            // 
-            this.OpisToolStripMenuItem.Name = "OpisToolStripMenuItem";
-            this.OpisToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.OpisToolStripMenuItem.Text = "О программе";
-            this.OpisToolStripMenuItem.Click += new System.EventHandler(this.OpisToolStripMenuItemClick);
-            // 
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
@@ -316,20 +302,8 @@ namespace UserAssistance
             this.OldToolStripMenuItem,
             this.ShowToolStripMenuItem});
             this.отображениеToolStripMenuItem.Name = "отображениеToolStripMenuItem";
-            this.отображениеToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.отображениеToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.отображениеToolStripMenuItem.Text = "Отображение";
-            // 
-            // действиеToolStripMenuItem
-            // 
-            this.действиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SaveListToolStripMenuItem,
-            this.DeleteToolStripMenuItem,
-            this.DeleteOldToolStripMenuItem,
-            this.SaveAllToolStripMenuItem,
-            this.SaveSelectToolStripMenuItem});
-            this.действиеToolStripMenuItem.Name = "действиеToolStripMenuItem";
-            this.действиеToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.действиеToolStripMenuItem.Text = "Действие";
             // 
             // AllToolStripMenuItem
             // 
@@ -352,42 +326,93 @@ namespace UserAssistance
             this.ShowToolStripMenuItem.Text = "Показать";
             this.ShowToolStripMenuItem.Click += new System.EventHandler(this.ShowToolStripMenuItem_Click);
             // 
+            // действиеToolStripMenuItem
+            // 
+            this.действиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SaveListToolStripMenuItem,
+            this.DeleteToolStripMenuItem,
+            this.DeleteOldToolStripMenuItem,
+            this.SaveAllToolStripMenuItem,
+            this.SaveSelectToolStripMenuItem});
+            this.действиеToolStripMenuItem.Name = "действиеToolStripMenuItem";
+            this.действиеToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.действиеToolStripMenuItem.Text = "Действие";
+            // 
             // SaveListToolStripMenuItem
             // 
             this.SaveListToolStripMenuItem.Name = "SaveListToolStripMenuItem";
-            this.SaveListToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.SaveListToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.SaveListToolStripMenuItem.Text = "Сохранить список";
             this.SaveListToolStripMenuItem.Click += new System.EventHandler(this.SaveListToolStripMenuItem_Click);
             // 
             // DeleteToolStripMenuItem
             // 
             this.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem";
-            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.DeleteToolStripMenuItem.Text = "Удалить";
             // 
             // DeleteOldToolStripMenuItem
             // 
             this.DeleteOldToolStripMenuItem.Name = "DeleteOldToolStripMenuItem";
-            this.DeleteOldToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.DeleteOldToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.DeleteOldToolStripMenuItem.Text = "Удалить устаревшие";
             // 
             // SaveAllToolStripMenuItem
             // 
             this.SaveAllToolStripMenuItem.Name = "SaveAllToolStripMenuItem";
-            this.SaveAllToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.SaveAllToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.SaveAllToolStripMenuItem.Text = "Сохранить все";
             // 
             // SaveSelectToolStripMenuItem
             // 
             this.SaveSelectToolStripMenuItem.Name = "SaveSelectToolStripMenuItem";
-            this.SaveSelectToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.SaveSelectToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.SaveSelectToolStripMenuItem.Text = "Сохранить выделенное";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpisToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(315, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // OpisToolStripMenuItem
+            // 
+            this.OpisToolStripMenuItem.Name = "OpisToolStripMenuItem";
+            this.OpisToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.OpisToolStripMenuItem.Text = "О программе";
+            this.OpisToolStripMenuItem.Click += new System.EventHandler(this.OpisToolStripMenuItemClick);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.OffAutoRunDev);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(285, 302);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "ИБ";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // OffAutoRunDev
+            // 
+            this.OffAutoRunDev.Location = new System.Drawing.Point(15, 6);
+            this.OffAutoRunDev.Name = "OffAutoRunDev";
+            this.OffAutoRunDev.Size = new System.Drawing.Size(209, 23);
+            this.OffAutoRunDev.TabIndex = 0;
+            this.OffAutoRunDev.Text = "Отключить автозапуск устройств";
+            this.OffAutoRunDev.UseVisualStyleBackColor = true;
+            this.OffAutoRunDev.Click += new System.EventHandler(this.OffAutoRunDev_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 375);
+            this.ClientSize = new System.Drawing.Size(315, 386);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -402,10 +427,11 @@ namespace UserAssistance
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,5 +452,7 @@ namespace UserAssistance
         private System.Windows.Forms.ToolStripMenuItem DeleteOldToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SaveAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SaveSelectToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button OffAutoRunDev;
     }
 }
