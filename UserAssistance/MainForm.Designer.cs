@@ -80,19 +80,20 @@ namespace UserAssistance
             this.DeleteOldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.OffAutoRunDev = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.OpisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.OffAutoRunDev = new System.Windows.Forms.Button();
+            this.DelCeshUpdateWindows = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.menuStrip2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -210,6 +211,7 @@ namespace UserAssistance
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.DelCeshUpdateWindows);
             this.tabPage3.Controls.Add(this.button10);
             this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.button8);
@@ -308,21 +310,21 @@ namespace UserAssistance
             // AllToolStripMenuItem
             // 
             this.AllToolStripMenuItem.Name = "AllToolStripMenuItem";
-            this.AllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AllToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.AllToolStripMenuItem.Text = "Все";
             this.AllToolStripMenuItem.Click += new System.EventHandler(this.AllToolStripMenuItem_Click);
             // 
             // OldToolStripMenuItem
             // 
             this.OldToolStripMenuItem.Name = "OldToolStripMenuItem";
-            this.OldToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OldToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.OldToolStripMenuItem.Text = "Устаревшие";
             this.OldToolStripMenuItem.Click += new System.EventHandler(this.OldToolStripMenuItem_Click);
             // 
             // ShowToolStripMenuItem
             // 
             this.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem";
-            this.ShowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ShowToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.ShowToolStripMenuItem.Text = "Показать";
             this.ShowToolStripMenuItem.Click += new System.EventHandler(this.ShowToolStripMenuItem_Click);
             // 
@@ -369,24 +371,6 @@ namespace UserAssistance
             this.SaveSelectToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.SaveSelectToolStripMenuItem.Text = "Сохранить выделенное";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OpisToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(315, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // OpisToolStripMenuItem
-            // 
-            this.OpisToolStripMenuItem.Name = "OpisToolStripMenuItem";
-            this.OpisToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
-            this.OpisToolStripMenuItem.Text = "О программе";
-            this.OpisToolStripMenuItem.Click += new System.EventHandler(this.OpisToolStripMenuItemClick);
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.OffAutoRunDev);
@@ -407,6 +391,34 @@ namespace UserAssistance
             this.OffAutoRunDev.Text = "Отключить автозапуск устройств";
             this.OffAutoRunDev.UseVisualStyleBackColor = true;
             this.OffAutoRunDev.Click += new System.EventHandler(this.OffAutoRunDev_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpisToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(315, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // OpisToolStripMenuItem
+            // 
+            this.OpisToolStripMenuItem.Name = "OpisToolStripMenuItem";
+            this.OpisToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.OpisToolStripMenuItem.Text = "О программе";
+            this.OpisToolStripMenuItem.Click += new System.EventHandler(this.OpisToolStripMenuItemClick);
+            // 
+            // DelCeshUpdateWindows
+            // 
+            this.DelCeshUpdateWindows.Location = new System.Drawing.Point(6, 133);
+            this.DelCeshUpdateWindows.Name = "DelCeshUpdateWindows";
+            this.DelCeshUpdateWindows.Size = new System.Drawing.Size(208, 23);
+            this.DelCeshUpdateWindows.TabIndex = 4;
+            this.DelCeshUpdateWindows.Text = "Удалить кэш обновлений";
+            this.DelCeshUpdateWindows.UseVisualStyleBackColor = true;
+            this.DelCeshUpdateWindows.Click += new System.EventHandler(this.DelCeshUpdateWindows_Click);
             // 
             // MainForm
             // 
@@ -429,9 +441,9 @@ namespace UserAssistance
             this.tabPage4.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,5 +466,6 @@ namespace UserAssistance
         private System.Windows.Forms.ToolStripMenuItem SaveSelectToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button OffAutoRunDev;
+        private System.Windows.Forms.Button DelCeshUpdateWindows;
     }
 }

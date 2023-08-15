@@ -12,6 +12,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.IO;
 using System.Xml.Serialization;
 using Microsoft.Win32;
+using System.Security.Cryptography;
 
 namespace UserAssistance
 {
@@ -47,9 +48,9 @@ namespace UserAssistance
 				{
 					command += " netsh interface set interface name=\"" + adapter[i]._Name + "\" admin=DISABLED & ";
 					command += " netsh interface set interface name=\"" + adapter[i]._Name + "\" admin=ENABLED & ";
-                    command += " netsh interface ip set dns \"" + adapter[i]._Name + "\" static 8.8.8.8 &";
-                    command += " netsh interface ip add dns \"" + adapter[i]._Name + "\"  8.8.0.0 &";
-                }
+					command += " netsh interface ip set dns \"" + adapter[i]._Name + "\" static 8.8.8.8 &";
+					command += " netsh interface ip add dns \"" + adapter[i]._Name + "\"  8.8.0.0 &";
+				}
 				command += " pause";
 				System.Diagnostics.Process.Start("cmd.exe", command);
 			}
@@ -416,7 +417,7 @@ namespace UserAssistance
 				string filePath = saveFileDialog.FileName;
 				using (StreamWriter writer = new StreamWriter(filePath))
 				{
-   					// Записываем заголовок таблицы
+					// Записываем заголовок таблицы
 					writer.WriteLine("Subject,Issuer,ValidFrom,ValidTo");
 
 					// Записываем данные сертификатов
@@ -424,39 +425,66 @@ namespace UserAssistance
 					{
 						writer.WriteLine($"{certificate.Subject},{certificate.Issuer},{certificate.NotBefore},{certificate.NotAfter}");
 					}
-                    // Создаем объект XmlSerializer для сериализации списка сертификатов
+					// Создаем объект XmlSerializer для сериализации списка сертификатов
 
-                }
+				}
 			}
 		}
 
-        private void OffAutoRunDev_Click(object sender, EventArgs e)
-        {
-            string system32_path = Environment.SystemDirectory;
-            DialogResult dialogresult = MessageBox.Show("Подтверждаете блокирование автозапуска внешних устройств?", "Подтверждаете?", MessageBoxButtons.YesNo);
-            if (dialogresult == DialogResult.Yes)
-            {
-                string keyName = @"SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer";
-                RegistryKey baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Default);
-                RegistryKey subKey = baseKey.OpenSubKey(keyName);
-                if (subKey == null)
+		private void OffAutoRunDev_Click(object sender, EventArgs e)
+		{
+			string system32_path = Environment.SystemDirectory;
+			DialogResult dialogresult = MessageBox.Show("Подтверждаете блокирование автозапуска внешних устройств?", "Подтверждаете?", MessageBoxButtons.YesNo);
+			if (dialogresult == DialogResult.Yes)
+			{
+				string keyName = @"SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer";
+				RegistryKey baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Default);
+				RegistryKey subKey = baseKey.OpenSubKey(keyName);
+				if (subKey == null)
 				{
-                    subKey = baseKey.CreateSubKey(keyName);
-                    subKey.SetValue("NoFolderOptions", 1, RegistryValueKind.DWord);
-                    Console.WriteLine($"Раздел {keyName} создан.");
-                }
-                string valueName = "NoDriveTypeAutoRun";
-                int valueData = 0xff; // 0xff в шестнадцатеричном формате равно 255 в десятичном формате
-                subKey = baseKey.OpenSubKey(keyName, true);
-                subKey.SetValue(valueName, valueData, RegistryValueKind.DWord);
-                dialogresult = MessageBox.Show("Автозапуск внешних устройств  заблокирован!","ОК", MessageBoxButtons.OK);
-            
+					subKey = baseKey.CreateSubKey(keyName);
+					subKey.SetValue("NoFolderOptions", 1, RegistryValueKind.DWord);
+					Console.WriteLine($"Раздел {keyName} создан.");
+				}
+				string valueName = "NoDriveTypeAutoRun";
+				int valueData = 0; // 0xff в шестнадцатеричном формате равно 255 в десятичном формате
+				subKey = baseKey.OpenSubKey(keyName, true);
+				subKey.SetValue(valueName, valueData, RegistryValueKind.DWord);
 
-                subKey.Close();
-                baseKey.Close();
+				keyName = @"\SYSTEM\CurrentControlSet\Services\Cdrom";
+				baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Default);
+				subKey = baseKey.OpenSubKey(keyName);
+				valueName = "AutoRun";
+				valueData = 0; // 0xff в шестнадцатеричном формате равно 255 в десятичном формате
+				subKey = baseKey.OpenSubKey(keyName, true);
+				subKey.SetValue(valueName, valueData, RegistryValueKind.DWord);
 
-            }
-        }
-    }
+				subKey.Close();
+				baseKey.Close();
+				dialogresult = MessageBox.Show("Автозапуск внешних устройств  заблокирован!", "ОК", MessageBoxButtons.OK);
 
+			}
+		}
+
+		private void DelCeshUpdateWindows_Click(object sender, EventArgs e)
+		{
+			string system32_path = Environment.SystemDirectory;
+			string command;
+			DialogResult dialogresult = MessageBox.Show("Подтверждаете удаление кэша обновлений?", "Подтверждаете?", MessageBoxButtons.YesNo);
+			if (dialogresult == DialogResult.Yes)
+			{
+				command = "/C  net stop wuauserv & ";
+				command += " net stop cryptSvc & ";
+				command += " net stop bits & ";
+				command += " net stop msiserver & ";
+				command += " ren % SystemRoot %\\SoftwareDistribution SoftwareDistribution.old & ";
+				command += " ren % SystemRoot %\\System32\\catroot2 Catroot2.old & ";
+				command += " net start wuauserv & ";
+				command += " net start cryptSvc & ";
+				command += " net start bits & ";
+				command += " net start msiserver & ";
+				System.Diagnostics.Process.Start("cmd.exe", command);
+			}
+		}
+	}
 }
