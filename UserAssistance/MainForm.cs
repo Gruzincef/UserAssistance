@@ -477,8 +477,8 @@ namespace UserAssistance
 				command += " net stop cryptSvc & ";
 				command += " net stop bits & ";
 				command += " net stop msiserver & ";
-				command += " ren % SystemRoot %\\SoftwareDistribution SoftwareDistribution.old & ";
-				command += " ren % SystemRoot %\\System32\\catroot2 Catroot2.old & ";
+				command += " ren %SystemRoot%\\SoftwareDistribution SoftwareDistribution.old & ";
+				command += " ren %SystemRoot%\\System32\\catroot2 Catroot2.old & ";
 				command += " net start wuauserv & ";
 				command += " net start cryptSvc & ";
 				command += " net start bits & ";
@@ -486,5 +486,20 @@ namespace UserAssistance
 				System.Diagnostics.Process.Start("cmd.exe", command);
 			}
 		}
-	}
+
+        private void sfcscanow_Click(object sender, EventArgs e)
+        {
+			string system32_path = Environment.SystemDirectory;
+            string command;
+            DialogResult dialogresult = MessageBox.Show("Подтверждаете проведение проверки системных файлов?", "Подтверждаете?"+ "/C  sfc /scannow  & ", MessageBoxButtons.YesNo);
+            if (dialogresult == DialogResult.Yes)
+            {
+                command = "/C %SystemRoot%\\sysNative\\sfc /scannow  & ";
+                command += " pause";
+                System.Diagnostics.Process.Start("cmd.exe", command);
+            }
+
+            
+        }
+    }
 }

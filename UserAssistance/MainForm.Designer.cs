@@ -63,6 +63,7 @@ namespace UserAssistance
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.DelCeshUpdateWindows = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -85,7 +86,7 @@ namespace UserAssistance
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.OpisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DelCeshUpdateWindows = new System.Windows.Forms.Button();
+            this.sfcscanow = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -223,6 +224,16 @@ namespace UserAssistance
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Кэш";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // DelCeshUpdateWindows
+            // 
+            this.DelCeshUpdateWindows.Location = new System.Drawing.Point(6, 133);
+            this.DelCeshUpdateWindows.Name = "DelCeshUpdateWindows";
+            this.DelCeshUpdateWindows.Size = new System.Drawing.Size(208, 23);
+            this.DelCeshUpdateWindows.TabIndex = 4;
+            this.DelCeshUpdateWindows.Text = "Удалить кэш обновлений";
+            this.DelCeshUpdateWindows.UseVisualStyleBackColor = true;
+            this.DelCeshUpdateWindows.Click += new System.EventHandler(this.DelCeshUpdateWindows_Click);
             // 
             // button10
             // 
@@ -373,6 +384,7 @@ namespace UserAssistance
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.sfcscanow);
             this.tabPage5.Controls.Add(this.OffAutoRunDev);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
@@ -386,7 +398,7 @@ namespace UserAssistance
             // 
             this.OffAutoRunDev.Location = new System.Drawing.Point(15, 6);
             this.OffAutoRunDev.Name = "OffAutoRunDev";
-            this.OffAutoRunDev.Size = new System.Drawing.Size(209, 23);
+            this.OffAutoRunDev.Size = new System.Drawing.Size(231, 23);
             this.OffAutoRunDev.TabIndex = 0;
             this.OffAutoRunDev.Text = "Отключить автозапуск устройств";
             this.OffAutoRunDev.UseVisualStyleBackColor = true;
@@ -410,15 +422,15 @@ namespace UserAssistance
             this.OpisToolStripMenuItem.Text = "О программе";
             this.OpisToolStripMenuItem.Click += new System.EventHandler(this.OpisToolStripMenuItemClick);
             // 
-            // DelCeshUpdateWindows
+            // sfcscanow
             // 
-            this.DelCeshUpdateWindows.Location = new System.Drawing.Point(6, 133);
-            this.DelCeshUpdateWindows.Name = "DelCeshUpdateWindows";
-            this.DelCeshUpdateWindows.Size = new System.Drawing.Size(208, 23);
-            this.DelCeshUpdateWindows.TabIndex = 4;
-            this.DelCeshUpdateWindows.Text = "Удалить кэш обновлений";
-            this.DelCeshUpdateWindows.UseVisualStyleBackColor = true;
-            this.DelCeshUpdateWindows.Click += new System.EventHandler(this.DelCeshUpdateWindows_Click);
+            this.sfcscanow.Location = new System.Drawing.Point(15, 45);
+            this.sfcscanow.Name = "sfcscanow";
+            this.sfcscanow.Size = new System.Drawing.Size(231, 23);
+            this.sfcscanow.TabIndex = 1;
+            this.sfcscanow.Text = "Првоести проверку системных файлов";
+            this.sfcscanow.UseVisualStyleBackColor = true;
+            this.sfcscanow.Click += new System.EventHandler(this.sfcscanow_Click);
             // 
             // MainForm
             // 
@@ -467,5 +479,6 @@ namespace UserAssistance
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button OffAutoRunDev;
         private System.Windows.Forms.Button DelCeshUpdateWindows;
+        private System.Windows.Forms.Button sfcscanow;
     }
 }
