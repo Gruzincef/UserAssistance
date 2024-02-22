@@ -82,11 +82,17 @@ namespace UserAssistance
             this.SaveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.sfcscanow = new System.Windows.Forms.Button();
             this.OffAutoRunDev = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.OpisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sfcscanow = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.DeleteEmptyDir = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -95,6 +101,7 @@ namespace UserAssistance
             this.menuStrip2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -203,6 +210,7 @@ namespace UserAssistance
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(10, 37);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -394,6 +402,16 @@ namespace UserAssistance
             this.tabPage5.Text = "ИБ";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // sfcscanow
+            // 
+            this.sfcscanow.Location = new System.Drawing.Point(15, 45);
+            this.sfcscanow.Name = "sfcscanow";
+            this.sfcscanow.Size = new System.Drawing.Size(231, 23);
+            this.sfcscanow.TabIndex = 1;
+            this.sfcscanow.Text = "Првоести проверку системных файлов";
+            this.sfcscanow.UseVisualStyleBackColor = true;
+            this.sfcscanow.Click += new System.EventHandler(this.sfcscanow_Click);
+            // 
             // OffAutoRunDev
             // 
             this.OffAutoRunDev.Location = new System.Drawing.Point(15, 6);
@@ -422,15 +440,64 @@ namespace UserAssistance
             this.OpisToolStripMenuItem.Text = "О программе";
             this.OpisToolStripMenuItem.Click += new System.EventHandler(this.OpisToolStripMenuItemClick);
             // 
-            // sfcscanow
+            // tabPage6
             // 
-            this.sfcscanow.Location = new System.Drawing.Point(15, 45);
-            this.sfcscanow.Name = "sfcscanow";
-            this.sfcscanow.Size = new System.Drawing.Size(231, 23);
-            this.sfcscanow.TabIndex = 1;
-            this.sfcscanow.Text = "Првоести проверку системных файлов";
-            this.sfcscanow.UseVisualStyleBackColor = true;
-            this.sfcscanow.Click += new System.EventHandler(this.sfcscanow_Click);
+            this.tabPage6.Controls.Add(this.progressBar1);
+            this.tabPage6.Controls.Add(this.button15);
+            this.tabPage6.Controls.Add(this.button14);
+            this.tabPage6.Controls.Add(this.button13);
+            this.tabPage6.Controls.Add(this.DeleteEmptyDir);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(285, 302);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Файлы";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // DeleteEmptyDir
+            // 
+            this.DeleteEmptyDir.Location = new System.Drawing.Point(20, 18);
+            this.DeleteEmptyDir.Name = "DeleteEmptyDir";
+            this.DeleteEmptyDir.Size = new System.Drawing.Size(206, 23);
+            this.DeleteEmptyDir.TabIndex = 0;
+            this.DeleteEmptyDir.Text = "Удалить пустые папки";
+            this.DeleteEmptyDir.UseVisualStyleBackColor = true;
+            this.DeleteEmptyDir.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(20, 66);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(206, 23);
+            this.button13.TabIndex = 1;
+            this.button13.Text = "Найти дубли";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(20, 114);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(206, 27);
+            this.button14.TabIndex = 2;
+            this.button14.Text = "Удалить дубли";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(20, 169);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(206, 23);
+            this.button15.TabIndex = 3;
+            this.button15.Text = "Стоп";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(6, 276);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(273, 23);
+            this.progressBar1.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -456,6 +523,7 @@ namespace UserAssistance
             this.tabPage5.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,5 +548,11 @@ namespace UserAssistance
         private System.Windows.Forms.Button OffAutoRunDev;
         private System.Windows.Forms.Button DelCeshUpdateWindows;
         private System.Windows.Forms.Button sfcscanow;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button DeleteEmptyDir;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button button15;
     }
 }

@@ -451,7 +451,7 @@ namespace UserAssistance
 				subKey = baseKey.OpenSubKey(keyName, true);
 				subKey.SetValue(valueName, valueData, RegistryValueKind.DWord);
 
-				keyName = @"\SYSTEM\CurrentControlSet\Services\Cdrom";
+				keyName = @"\SYSTEM\CurrentControlSet\services\Cdrom";
 				baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Default);
 				subKey = baseKey.OpenSubKey(keyName);
 				valueName = "AutoRun";
@@ -501,5 +501,7 @@ namespace UserAssistance
 
             
         }
+
+
     }
 }
